@@ -24,11 +24,19 @@
         android:key="colt_interface"
         android:title="@string/colt_interface">
 
+        <!-- Status Bar -->
 	<PreferenceScreen
             android:fragment="com.colt.settings.fragments.StatusBarSettings"
             android:key="colt_statusbar_settings"
             android:title="@string/statusbar_settings_title"/>
+       
+        <!-- Quick Settings panel -->
+        <PreferenceScreen
+            android:key="quicksettings_category"
+            android:title="@string/quicksettings_title"
+            android:fragment="com.colt.settings.fragments.QuickSettings"
 
+        <!-- Lock Screen -->
 	<PreferenceScreen
             android:fragment="com.colt.settings.fragments.LockScreenSettings"
             android:key="colt_lockscreen_settings"

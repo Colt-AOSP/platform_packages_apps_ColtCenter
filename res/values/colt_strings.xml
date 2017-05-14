@@ -34,4 +34,8 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+  <!-- Quick Settings  -->
+    <string name="quicksettings_title">Quick Settings Panel</string>
+
+
  </resources>
