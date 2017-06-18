@@ -42,6 +42,12 @@
             android:key="colt_lockscreen_settings"
             android:title="@string/lockscreen_settings_title"/>
 
+	<!-- About ColtOS -->
+	<PreferenceScreen
+            android:key="about"
+            android:title="@string/about_colt"
+            android:fragment="com.colt.settings.fragments.About"
+
     </PreferenceCategory>
 
 </PreferenceScreen>
