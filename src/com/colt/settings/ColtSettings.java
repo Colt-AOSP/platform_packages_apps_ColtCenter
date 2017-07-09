@@ -17,16 +17,16 @@
 package com.colt.settings;
 
 import android.os.Bundle;
+
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 
-
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.Utils;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
 import com.colt.settings.R;
 
@@ -47,5 +47,6 @@ public class ColtSettings extends SettingsPreferenceFragment {
 	addPreferencesFromResource(R.xml.colt_settings_main);
 
     }
-}
+
+ }
 

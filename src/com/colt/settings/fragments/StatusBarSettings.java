@@ -42,9 +42,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.statusbar_settings));
+        addPreferencesFromResource(R.xml.statusbar_settings);
     }
- 
+
 @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;

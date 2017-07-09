@@ -48,7 +48,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 	}
 
     @Override
-    protected int getMetricsCategory() {
+    public int getMetricsCategory() {
 	return MetricsProto.MetricsEvent.COLT;
     }
 }
