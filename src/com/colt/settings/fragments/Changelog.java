@@ -13,24 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.colt.settings.fragments;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.MetricsLogger;
+
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Changelog extends Fragment {
+public class Changelog extends SettingsPreferenceFragment {
 
     private static final String CHANGELOG_PATH = "/system/etc/Changelog.txt";
 
@@ -40,8 +43,7 @@ public class Changelog extends Fragment {
         InputStreamReader inputReader = null;
         String text = null;
 
-	setHasOptionsMenu(true);
-
+       
         try {
             StringBuilder data = new StringBuilder();
             char tmp[] = new char[2048];
@@ -72,13 +74,8 @@ public class Changelog extends Fragment {
         return scrollView;
     }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-        getActivity().onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsEvent.COLT;
     }
-
 }

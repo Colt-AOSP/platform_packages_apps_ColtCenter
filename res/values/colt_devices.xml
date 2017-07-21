@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2017 ColtOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Device Brands -->
+    <string name="device_category_one_title">ANDROİD ONE</string>
+    <string name="device_category_bq_title">BQ</string>
+    <string name="device_category_asus_title">ASUS</string>
+    <string name="device_category_htc_title">HTC</string>
+    <string name="device_category_huawei_title">HUAWEİ</string>
+    <string name="device_category_google_title">GOOGLE</string>
+    <string name="device_category_leeco_title">LeEco</string>
+    <string name="device_category_lenovo_title">LENOVO</string>
+    <string name="device_category_lg_title">LG</string>
+    <string name="device_category_motorola_title">MOTOROLA</string>
+    <string name="device_category_nextbit_title">NEXTBIT</string>
+    <string name="device_category_nvidia_title">NVİDİA</string>
+    <string name="device_category_oneplus_title">ONEPLUS</string>
+    <string name="device_category_oppo_title">OPPO</string>
+    <string name="device_category_samsung_title">SAMSUNG</string>
+    <string name="device_category_sony_title">SONY</string>
+    <string name="device_category_wileyfox_title">WİLEYFOX</string>
+    <string name="device_category_xiaomi_title">XIAOMI</string>
+    <string name="device_category_yu_title">YU</string>
+
+    <!-- YU -->
+
+    <string name="device_yu_tomato">Yu Yureka</string>
+    <string name="device_yu_tomato_summary">tomato\nMaintainer - Rakesh Batra</string>
+
+    <string name="device_yu_black">Yu Black</string>
+    <string name="device_yu_black_summary">black\nMaintainer - Nitin Choube</string>
+
+    <string name="device_yu_lettuce">Yu Yuphoria</string>
+    <string name="device_yu_lettuce_summary">lettuce\nMaintainer - Rohan</string>
+
+    <!-- GOOGLE -->
+    <string name="device_google_mako">Nexus 4</string>
+    <string name="device_google_mako_summary">mako\nMaintainer - Nitin Choube</string>
+
+    <string name="device_google_angler">Nexus 6p</string>
+    <string name="device_google_angler_summary">angler\nMaintainer - Nitin Choube</string>
+
+
+</resources>

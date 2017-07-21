@@ -15,13 +15,14 @@
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/about_colt">
 
-        <!-- Changelog -->
+        <!-- ColtOS Changelog -->
         <PreferenceScreen
             android:key="changelog"
             android:title="@string/changelog_colt_title"
+	    android:summary="@string/changelog_colt_summary"
             android:fragment="com.colt.settings.fragments.Changelog" />
 
-        <!-- Colt Share -->
+        <!-- ColtOS Share -->
         <PreferenceScreen
             android:key="share"
             android:title="@string/share_colt_title"
@@ -43,6 +44,7 @@
         <PreferenceScreen
             android:key="maintainers"
             android:title="@string/maintainers_colt_title"
+	    android:summary="@string/maintainers_colt_summary"
             android:fragment="com.colt.settings.fragments.Maintainers" />
 
 </PreferenceScreen>

@@ -43,13 +43,14 @@
     <!-- Changelog -->
     <string name="changelog_colt_title">Changelog</string>
     <string name="changelog_colt_error">Unable to load changelog</string>
+    <string name="changelog_colt_summary">Lets see what we have changed recently in ROM</string>
 
     <!-- About Colt -->
     <string name="about_colt">About ColtOS</string>
 
     <!-- Share ColtOS -->
     <string name="share_colt_title">Share ColtOS</string>
-    <string name="share_colt_summary">Let Spread ColtOS</string>
+    <string name="share_colt_summary">Spread ColtOS</string>
     <string name="share_message">Check out Our ColtOS  @ https://plus.google.com/u/2/communities/102067248475500399675</string>
     <string name="share_chooser_title">Share ColtOS</string>
 
@@ -60,7 +61,8 @@
     <string name="colt_google_plus_summary">Visit our G+ page for support and news</string>
 
     <!-- Maintainers -->
-    <string name="maintainers_colt_title">ColtOS Maintainers</string>
-    <string name="maintainers_colt_error">Unable to load maintainers list</string>
+    <string name="maintainers_colt_title">ColtOS Devices and Maintainers</string>
+    <string name="maintainers_colt_error">Unable to load devices and maintainers list</string>
+    <string name="maintainers_colt_summary">List of supported devices and their official maintainers</string>
 
  </resources>
