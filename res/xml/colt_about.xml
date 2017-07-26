@@ -17,14 +17,14 @@
 
         <!-- ColtOS Changelog -->
         <PreferenceScreen
-            android:key="changelog"
+            android:key="colt_changelog"
             android:title="@string/changelog_colt_title"
 	    android:summary="@string/changelog_colt_summary"
             android:fragment="com.colt.settings.fragments.Changelog" />
 
         <!-- ColtOS Share -->
         <PreferenceScreen
-            android:key="share"
+            android:key="colt_share"
             android:title="@string/share_colt_title"
             android:summary="@string/share_colt_summary" />
 
@@ -42,7 +42,7 @@
 
         <!-- Maintainers -->
         <PreferenceScreen
-            android:key="maintainers"
+            android:key="colt_maintainers"
             android:title="@string/maintainers_colt_title"
 	    android:summary="@string/maintainers_colt_summary"
             android:fragment="com.colt.settings.fragments.Maintainers" />

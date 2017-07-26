@@ -33,24 +33,25 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    private static final String KEY_COLT_SHARE = "share";
+    private String KEY_COLT_SOURCE = "colt_source";
+    private String KEY_COLT_GPLUS = "colt_google_plus";
+    private String KEY_COLT_SHARE = "colt_share";
 
-    Preference mSourceUrl;
-    Preference mGoogleUrl;
+    private Preference mSourceUrl;
+    private Preference mGoogleUrl;
+    private Preference mShare;
+
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.colt_about);
 
-        mSourceUrl = findPreference("colt_source");
-        mGoogleUrl = findPreference("colt_google_plus");
-    }
+        mSourceUrl = findPreference(KEY_COLT_SOURCE);
+        mGoogleUrl = findPreference(KEY_COLT_GPLUS);
+        mShare = findPreference(KEY_COLT_SHARE);
 
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.COLT;
-    }
+   }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
@@ -58,13 +59,13 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://github.com/coltos");
         } else if (preference == mGoogleUrl) {
             launchUrl("https://plus.google.com/u/2/communities/102067248475500399675");
-        } else if (preference.getKey().equals(KEY_COLT_SHARE)) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, String.format(
-                getActivity().getString(R.string.share_message), Build.MODEL));
-        startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
+	} else if (preference == mShare) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, String.format(
+                    getActivity().getString(R.string.share_message), Build.MODEL));
+            startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -74,4 +75,10 @@ public class About extends SettingsPreferenceFragment {
         Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
         getActivity().startActivity(intent);
     }
+
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsEvent.COLT;
+    }
+
 }
