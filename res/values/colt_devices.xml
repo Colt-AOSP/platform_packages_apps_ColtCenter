@@ -40,17 +40,17 @@
     <string name="device_yu_tomato_summary">tomato\nMaintainer - Rakesh Batra</string>
 
     <string name="device_yu_black">Yu Black</string>
-    <string name="device_yu_black_summary">black\nMaintainer - Nitin Choube</string>
+    <string name="device_yu_black_summary">black\nMaintainer - Nitin1438</string>
 
     <string name="device_yu_lettuce">Yu Yuphoria</string>
     <string name="device_yu_lettuce_summary">lettuce\nMaintainer - Rohan</string>
 
     <!-- GOOGLE -->
     <string name="device_google_mako">Nexus 4</string>
-    <string name="device_google_mako_summary">mako\nMaintainer - Nitin Choube</string>
+    <string name="device_google_mako_summary">mako\nMaintainer - Nitin1438</string>
 
     <string name="device_google_angler">Nexus 6p</string>
-    <string name="device_google_angler_summary">angler\nMaintainer - Nitin Choube</string>
+    <string name="device_google_angler_summary">angler\nMaintainer - Nitin1438</string>
 
 
 </resources>
