@@ -47,4 +47,66 @@
 	    android:summary="@string/maintainers_colt_summary"
             android:fragment="com.colt.settings.fragments.Maintainers" />
 
+	<!-- Team Colt -->
+<PreferenceCategory
+	    android:key="team_colt"
+	    android:title="@string/dev_colt_title">
+            
+        <PreferenceScreen
+            android:key="mem1"
+            android:title="@string/rakesh_title"
+            android:summary="@string/rakesh_summary" />
+
+	<PreferenceScreen
+            android:key="mem2"
+            android:title="@string/nitin_title"
+            android:summary="@string/nitin_summary" />
+
+	<PreferenceScreen
+            android:key="mem3"
+            android:title="@string/vinoth_title"
+            android:summary="@string/vinoth_summary" />
+
+	<PreferenceScreen
+            android:key="mem4"
+            android:title="@string/nimit_title"
+            android:summary="@string/nimit_summary" />
+
+	<PreferenceScreen
+            android:key="mem5"
+            android:title="@string/nikhil_title"
+            android:summary="@string/nikhil_summary" />
+
+	<PreferenceScreen
+            android:key="mem6"
+            android:title="@string/debo_title"
+            android:summary="@string/debo_summary" />
+
+	<PreferenceScreen
+            android:key="mem7"
+            android:title="@string/roger_title"
+            android:summary="@string/roger_summary" />
+
+	<PreferenceScreen
+            android:key="mem8"
+            android:title="@string/meet_title"
+            android:summary="@string/meet_summary" />
+
+	<PreferenceScreen
+            android:key="mem9"
+            android:title="@string/athul_title"
+            android:summary="@string/athul_summary" />
+
+	<PreferenceScreen
+            android:key="mem10"
+            android:title="@string/srb_title"
+            android:summary="@string/srb_summary" />
+
+	<PreferenceScreen
+            android:key="mem11"
+            android:title="@string/anupmm_title"
+            android:summary="@string/anupam_summary" />
+
+</PreferenceCategory>
+
 </PreferenceScreen>

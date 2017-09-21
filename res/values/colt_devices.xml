@@ -40,10 +40,13 @@
     <string name="device_yu_tomato_summary">tomato\nMaintainer - Rakesh Batra</string>
 
     <string name="device_yu_black">Yu Black</string>
-    <string name="device_yu_black_summary">black\nMaintainer - Nitin1438</string>
+    <string name="device_yu_black_summary">garlic\nMaintainer - Nitin1438</string>
 
     <string name="device_yu_lettuce">Yu Yuphoria</string>
     <string name="device_yu_lettuce_summary">lettuce\nMaintainer - Rohan</string>
+
+    <string name="device_yu_un">Yu Yunique</string>
+    <string name="device_yu_un_summary">jalebi\nMaintainer - Vinesh Iyappan</string>
 
     <!-- GOOGLE -->
     <string name="device_google_mako">Nexus 4</string>
@@ -52,5 +55,29 @@
     <string name="device_google_angler">Nexus 6p</string>
     <string name="device_google_angler_summary">angler\nMaintainer - Nitin1438</string>
 
+     <!-- ONEPLUS -->
+    <string name="device_oneplus_oneplus2">OnePlus Two</string>
+    <string name="device_oneplus_oneplus2_summary">oneplus2\nMaintainer - Nikhil Verma</string>
+
+    <string name="device_oneplus_oneplus3">OnePlus 3</string>
+    <string name="device_oneplus_oneplus3_summary">oneplus3-3T(Unified)\nMaintainer - SuperDroid-BOND</string>
+
+    <!-- Xiaomi -->
+    <string name="device_xiaomi_redmi2">Redmi 2</string>
+    <string name="device_xiaomi_redmi2_summary">redmi2\nMaintainer - Ajith</string>
+
+    <string name="device_xiaomi_santoni">Redmi 4/4x</string>
+    <string name="device_xiaomi_santoni_summary">santoni\nMaintainer - Abhiraj Singh</string>
+
+    <string name="device_xiaomi_mido">Redmi Note 4</string>
+    <string name="device_xiaomi_mido_summary">mido\nMaintainer - Roshan Srivastava</string>
+
+    <!-- MOTOROLA -->
+    <string name="device_moto_athene">Moto G4 Plus</string>
+    <string name="device_moto_athene_summary">athene\nMaintainer -  Jashkirat Virdi </string>
+
+    <!-- LG -->
+    <string name="device_lg_g3">LG G3</string>
+    <string name="device_lg_g3_summary">d850-d851-d852-d855\nMaintainer - Traian (jeal0us)</string>
 
 </resources>

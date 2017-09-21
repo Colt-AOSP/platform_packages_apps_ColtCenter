@@ -65,4 +65,30 @@
     <string name="maintainers_colt_error">Unable to load devices and maintainers list</string>
     <string name="maintainers_colt_summary">List of supported devices and their official maintainers</string>
 
+     <!-- About Team Colt -->
+    <string name="dev_cat_title">Dev Tag</string>
+    <string name="dev_colt_title">Team Colt</string>
+    <string name="rakesh_title">➤ Rakesh Batra</string>
+    <string name="nitin_title">➤ Nitin1438</string>
+    <string name="vinoth_title">➤ Vinoth Raja</string>
+    <string name="nikhil_title">➤ Nikhil Verma</string>
+    <string name="debo_title">➤ Debojit Deb</string>
+    <string name="roger_title">➤ Roger T</string>
+    <string name="meet_title">➤ Meet Gohil</string>
+    <string name="anupmm_title">➤ Anupam D Moran</string>
+    <string name="nimit_title">➤ Nimit</string>
+    <string name="srb_title">➤ Saurabh Hooda</string>
+    <string name="athul_title">➤ Athul</string>
+    <string name="rakesh_summary">☀ Founder \n☀ Project leader \n☀ Head Developer \n☀ Maintainer</string>
+    <string name="nitin_summary">☀ Project Contributor \n☀ Developer \n☀ Maintainer</string>
+    <string name="vinoth_summary">☀ Project Contributor \n☀ Developer \n☀ Maintainer</string>
+    <string name="nimit_summary">☀ Project Contributor \n☀ Developer \n☀ Maintainer</string>
+    <string name="nikhil_summary">☀ Developer \n☀ Maintainer</string>
+    <string name="debo_summary">☀ UX designer</string>
+    <string name="roger_summary">☀ UX designer</string>
+    <string name="meet_summary">☀ Moderator \n☀ Contributor</string>    
+    <string name="athul_summary">☀ Moderator \n☀ Tester</string>
+    <string name="anupam_summary">☀ Moderator \n☀ Tester</string>
+    <string name="srb_summary">☀ Moderator \n☀ Tester</string>
+
  </resources>

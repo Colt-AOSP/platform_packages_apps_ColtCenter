@@ -37,6 +37,13 @@
             android:title="@string/device_yu_black"
             android:summary="@string/device_yu_black_summary"
 	    android:selectable="false" />
+
+	<Preference
+            android:id="@+id/device_yu_un"
+            android:title="@string/device_yu_un"
+            android:summary="@string/device_yu_un_summary"
+            android:selectable="false" />
+
 </PreferenceCategory>
 
 
@@ -57,5 +64,73 @@
 	    android:selectable="false" />
 
     </PreferenceCategory>
+
+
+<!-- ONEPLUS -->
+    <PreferenceCategory
+    android:title="@string/device_category_oneplus_title">
+
+	   <Preference
+            android:id="@+id/device_oneplus_oneplus2"
+            android:title="@string/device_oneplus_oneplus2"
+            android:summary="@string/device_oneplus_oneplus2_summary"
+	    android:selectable="false" />
+
+           <Preference
+            android:id="@+id/device_oneplus_oneplus3"
+            android:title="@string/device_oneplus_oneplus3"
+            android:summary="@string/device_oneplus_oneplus3_summary"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
+<!-- XIAOMI -->
+    <PreferenceCategory
+    android:title="@string/device_category_xiaomi_title">
+
+	    <Preference
+            android:id="@+id/device_xiaomi_mido"
+            android:title="@string/device_xiaomi_mido"
+            android:summary="@string/device_xiaomi_mido_summary"
+	    android:selectable="false" />
+
+	    <Preference
+            android:id="@+id/device_xiaomi_santoni"
+            android:title="@string/device_xiaomi_santoni"
+            android:summary="@string/device_xiaomi_santoni_summary"
+            android:selectable="false" />
+
+	    <Preference
+            android:id="@+id/device_xiaomi_redmi2s"
+            android:title="@string/device_xiaomi_redmi2"
+            android:summary="@string/device_xiaomi_redmi2_summary"
+            android:selectable="false" />
+
+
+    </PreferenceCategory>
+
+ <!-- MOTOROLA -->
+    <PreferenceCategory
+    android:title="@string/device_category_motorola_title">
+	
+	    <Preference
+            android:id="@+id/device_moto_athene"
+            android:title="@string/device_moto_athene"
+            android:summary="@string/device_moto_athene_summary"
+	    android:selectable="false" />
+
+    </PreferenceCategory>
+
+<!-- LG -->
+    <PreferenceCategory
+    android:title="@string/device_category_lg_title">
+
+	    <Preference
+            android:id="@+id/device_lg_g3"
+            android:title="@string/device_lg_g3"
+            android:summary="@string/device_lg_g3_summary"
+	    android:selectable="false" />
+    
+      </PreferenceCategory>
 
 </PreferenceScreen>
