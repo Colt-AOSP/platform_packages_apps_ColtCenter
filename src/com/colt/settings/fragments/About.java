@@ -26,8 +26,7 @@ import android.support.v7.preference.PreferenceScreen;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 public class About extends SettingsPreferenceFragment {
 
@@ -77,8 +76,8 @@ public class About extends SettingsPreferenceFragment {
     }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.COLT;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.COLT;
     }
 
 }
