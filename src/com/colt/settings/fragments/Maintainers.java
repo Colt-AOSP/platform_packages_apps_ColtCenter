@@ -17,7 +17,7 @@ package com.colt.settings.fragments;
 
 import android.os.Bundle;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -31,7 +31,7 @@ public class Maintainers extends SettingsPreferenceFragment {
     }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.COLT;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.COLT;
      }
 }

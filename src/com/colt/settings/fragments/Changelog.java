@@ -23,8 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
-import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -74,8 +73,8 @@ public class Changelog extends SettingsPreferenceFragment {
         return scrollView;
     }
 
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.COLT;
-    }
-}
+       @Override
+       public int getMetricsCategory() {
+       return MetricsProto.MetricsEvent.COLT;
+     }
+ }

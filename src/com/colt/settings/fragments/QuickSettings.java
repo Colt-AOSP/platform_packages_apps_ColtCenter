@@ -1,6 +1,6 @@
 package com.colt.settings.fragments;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -44,8 +44,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.COLT;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.COLT;
     }
 
 }

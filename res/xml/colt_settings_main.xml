@@ -34,7 +34,7 @@
         <PreferenceScreen
             android:key="quicksettings_category"
             android:title="@string/quicksettings_title"
-            android:fragment="com.colt.settings.fragments.QuickSettings"
+            android:fragment="com.colt.settings.fragments.QuickSettings"/>
 
         <!-- Lock Screen -->
 	<PreferenceScreen
@@ -46,7 +46,7 @@
 	<PreferenceScreen
             android:key="about"
             android:title="@string/about_colt"
-            android:fragment="com.colt.settings.fragments.About"
+            android:fragment="com.colt.settings.fragments.About"/>
 
     </PreferenceCategory>
 
