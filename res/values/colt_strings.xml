@@ -91,4 +91,7 @@
     <string name="anupam_summary">☀ Moderator \n☀ Tester</string>
     <string name="srb_summary">☀ Moderator \n☀ Tester</string>
 
+   <!-- Miscellaneous fragment -->
+   <string name="misc_settings_title">Colt Decorators</string>
+
  </resources>

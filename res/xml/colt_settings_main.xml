@@ -42,6 +42,12 @@
             android:key="colt_lockscreen_settings"
             android:title="@string/lockscreen_settings_title"/>
 
+	<!-- More Colt -->
+	<PreferenceScreen
+            android:fragment="com.colt.settings.fragments.MiscSettings"
+            android:key="colt_misc_settings"
+            android:title="@string/misc_settings_title"/>
+
 	<!-- About ColtOS -->
 	<PreferenceScreen
             android:key="about"
