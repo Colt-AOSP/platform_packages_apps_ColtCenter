@@ -13,4 +13,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<Preference
+        android:key="leds"
+        android:fragment="com.colt.settings.fragments.LedSettings"
+        android:title="@string/leds_title" />
+
 </PreferenceScreen>
