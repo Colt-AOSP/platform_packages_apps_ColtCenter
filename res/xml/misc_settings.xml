@@ -18,6 +18,11 @@
         android:fragment="com.colt.settings.fragments.LedSettings"
         android:title="@string/leds_title" />
 
+<Preference
+        android:key="powermenu"
+        android:fragment="com.colt.settings.fragments.PowerMenu"
+        android:title="@string/powermenu_title" />
+
 <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="toast_icon"
         android:title="@string/toast_icon_title"
