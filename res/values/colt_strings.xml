@@ -16,7 +16,7 @@
  <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
   <!-- Categories -->
-  <string name="colt_interface">Colt's Hub</string>
+  <string name="colt_interface">Colt\'s Hub</string>
 
   <!-- Status Bar fragment -->  
   <string name="statusbar_settings_title">Status bar</string>
@@ -93,5 +93,9 @@
 
    <!-- Miscellaneous fragment -->
    <string name="misc_settings_title">Colt Decorators</string>
+
+    <!-- Toast icon -->
+   <string name="toast_icon_title">App\'s icon in toast</string>
+   <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 
  </resources>
