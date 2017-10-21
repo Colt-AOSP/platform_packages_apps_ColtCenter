@@ -52,6 +52,7 @@ import com.colt.settings.fragments.About;
 import com.colt.settings.fragments.StatusBarSettings;
 import com.colt.settings.fragments.QuickSettings;
 import com.colt.settings.fragments.LockScreenSettings;
+import com.colt.settings.fragments.Navbar;
 import com.colt.settings.fragments.MiscSettings;
 import com.colt.settings.fragments.About;
 
@@ -113,8 +114,9 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
 	    frags[0] = new StatusBarSettings();
 	    frags[1] = new QuickSettings();
 	    frags[2] = new LockScreenSettings();
-	    frags[3] = new MiscSettings();
-	    frags[4] = new About();
+	    frags[3] = new navigation();
+	    frags[4] = new MiscSettings();
+	    frags[5] = new About();
         }
 
         @Override
@@ -152,6 +154,7 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
 	    getString(R.string.statusbar_settings_title),
 	    getString(R.string.quicksettings_title),
 	    getString(R.string.lockscreen_settings_title),
+	    getString(R.string.navigation_category),
 	    getString(R.string.misc_settings_title),
 	    getString(R.string.about_colt)
         };
