@@ -16,6 +16,10 @@
         android:key="about_colt"
         android:title="@string/about_coltos_screen_title">
 
+	<!-- ColtOS Header -->
+        <Preference android:key="cos_logo"
+            android:layout="@layout/colt_logo" />
+
         <com.android.settings.applications.LayoutPreference
             android:key="about_coltos"
             android:layout="@layout/about_coltos" />
