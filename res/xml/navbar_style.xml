@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2017 ColtOS
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout="@layout/colt_tabs"
+    android:title="@string/navbar_style_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <ListPreference
+            android:key="navbar_mode"
+            android:title="@string/navbar_mode"
+            android:summary="@string/navbar_mode_summary"
+            android:entries="@array/systemui_navbar_mode_entries"
+            android:entryValues="@array/systemui_navbar_mode_values" />
+
+        <PreferenceScreen
+            android:key="smartbar_settings"
+            android:title="@string/smartbar_settings_title"
+            android:summary="@string/smartbar_settings_summary"
+            android:fragment="com.colt.settings.fragments.navbartabs.SmartbarSettings" />
+
+        <PreferenceScreen
+            android:key="fling_settings"
+            android:title="@string/fling_settings"
+            android:summary="@string/fling_settings_summary"
+            android:fragment="com.colt.settings.fragments.navbartabs.FlingSettings" />
+
+        <Preference
+            android:key="default_settings"
+            android:title="@string/default_settings"
+            android:summary="@string/default_settings_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.NavBarActivity" />
+        </Preference>
+
+        <PreferenceScreen
+            android:key="pulse_settings"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:fragment="com.colt.settings.fragments.navbartabs.PulseSettings" />
+
+</PreferenceScreen>
