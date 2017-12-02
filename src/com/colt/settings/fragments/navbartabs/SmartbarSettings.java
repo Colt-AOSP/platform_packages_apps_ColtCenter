@@ -16,6 +16,7 @@
 
 package com.colt.settings.fragments.navbartabs;
 
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -85,7 +86,6 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.smartbar_settings);
-
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smartbar_help_policy_notice_summary);
 
         int contextVal = Settings.Secure.getIntForUser(getContentResolver(),

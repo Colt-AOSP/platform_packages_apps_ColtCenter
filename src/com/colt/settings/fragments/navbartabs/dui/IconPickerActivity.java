@@ -16,7 +16,7 @@
  * Display installed icons packs that we are able to parse and get an icon from
  */
 
-package com.colt.settings.navbartabs.dui;
+package com.colt.settings.fragments.navbartabs.dui;
 
 import java.io.InputStream;
 import java.util.ArrayList;

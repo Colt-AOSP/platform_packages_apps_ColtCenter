@@ -28,7 +28,7 @@ import com.android.internal.utils.du.ActionHandler;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
-import com.colt.settings.dui.IconPickHelper;
+import com.colt.settings.fragments.navbartabs.dui.IconPickHelper;
 import com.colt.settings.preferences.ActionPreference;
 
 import android.app.ActionBar;

@@ -16,7 +16,7 @@
  * GridView displaying all the available icons in a Icon pack.
  */
 
-package com.colt.settings.navbartabs.dui;
+package com.colt.settings.fragments.navbartabs.dui;
 
 import java.io.IOException;
 import java.io.InputStream;

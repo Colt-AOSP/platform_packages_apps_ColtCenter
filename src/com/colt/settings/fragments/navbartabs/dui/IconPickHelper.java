@@ -17,7 +17,7 @@
  * Wrapper class for delivering icon picker results to activities or fragments
  */
 
-package com.colt.settings.navbartabs.dui;
+package com.colt.settings.fragments.navbartabs.dui;
 
 import java.io.File;
 

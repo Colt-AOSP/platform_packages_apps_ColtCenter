@@ -17,12 +17,12 @@
  * ActionHandler framework
  */
 
-package com.colt.settings.navbartabs.dui;
+package com.colt.settings.fragments.navbartabs.dui;
 
 import com.android.internal.utils.du.ActionHandler;
 import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.settings.R;
-import com.colt.settings.dui.CustomActionListAdapter;
+import com.colt.settings.fragments.navbartabs.dui.CustomActionListAdapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;

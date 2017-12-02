@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.navbartabs.dui;
+package com.colt.settings.fragments.navbartabs.dui;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.colt.settings.navbartabs.dui.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.colt.settings.fragments.navbartabs.dui.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 

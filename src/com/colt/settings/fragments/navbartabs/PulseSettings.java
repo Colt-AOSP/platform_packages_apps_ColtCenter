@@ -24,7 +24,7 @@ import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
-import com.aosip.owlsnest.preference.CustomSeekBarPreference;
+import com.colt.settings.preferences.CustomSeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v14.preference.SwitchPreference;
