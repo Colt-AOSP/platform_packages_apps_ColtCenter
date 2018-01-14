@@ -67,4 +67,10 @@
         android:summary="@string/volume_answer_call_summary"
         android:defaultValue="false" />
 
+<com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
