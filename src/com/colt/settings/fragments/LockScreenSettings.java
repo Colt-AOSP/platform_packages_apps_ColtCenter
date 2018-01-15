@@ -34,7 +34,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.colt.settings.R;
 
-public class LockScreenSettings extends SettingsPreferenceFragment {
+public class LockScreenSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
 	public static final String TAG = "LockScreenSettings";
 
@@ -51,4 +52,20 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
     public int getMetricsCategory() {
 	return MetricsProto.MetricsEvent.COLT;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        final String key = preference.getKey();
+        return true;
+    }
+
 }
