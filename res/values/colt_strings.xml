@@ -244,7 +244,7 @@
 
     <!--Lockscreen tabs-->	
     <string name="lockscreen_options_title">Lock Screen</string>
-    <string name="lockscreen_items_title">Weather</string>
+    <string name="lockscreen_weather_title">Weather</string>
 
     <!-- Statusbar Tab Fragment -->
     <string name="statusbar_misc_title">Statusbar Misc</string>
@@ -539,5 +539,13 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
+
+    <!-- Lockscreen weather -->
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather information</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_config_title">Service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
 
  </resources>
