@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2016 The Dirty Unicorns Project
+ * Copyright (C) 2017 ColtOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,42 +23,58 @@ import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
-import com.android.settings.R;
 import android.support.annotation.NonNull;
-
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.settings.R;
+import com.colt.settings.utils.Utils;
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class PowerMenu extends SettingsPreferenceFragment
+public class PowermenuSettings extends SettingsPreferenceFragment
                 implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
+
+    private SwitchPreference mPowermenuTorch;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.powermenu);
+        addPreferencesFromResource(R.xml.powermenu_settings);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
+        mPowermenuTorch.setOnPreferenceChangeListener(this);
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mPowermenuTorch);
+        } else {
+            mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
+                Settings.System.POWERMENU_TORCH, 0) == 1));
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        if (preference == mPowermenuTorch) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
@@ -66,5 +82,4 @@ public class PowerMenu extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
-
 }
