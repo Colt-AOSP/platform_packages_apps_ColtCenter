@@ -32,6 +32,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.colt.settings.PagerSlidingTabStrip;
 import com.colt.settings.fragments.decoratortabs.BatteryLightSettings;
+import com.colt.settings.fragments.decoratortabs.BatteryBarSettings;
 
 public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
 
@@ -83,6 +84,7 @@ public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
         public DecoratorsAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new BatteryLightSettings();
+            frags[1] = new BatteryBarSettings();
         }
 
         @Override
@@ -105,6 +107,7 @@ public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                 getString(R.string.led_tab_title),
+                getString(R.string.bar_tab_title),
 		};
         return titleString;
     }
