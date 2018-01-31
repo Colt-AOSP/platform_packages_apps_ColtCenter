@@ -614,4 +614,8 @@
     <string name="slim_blacklist_add_apps_title">Add app</string>
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
 
+    <!-- Volte switch -->
+    <string name="volte_icon_title">Volte Icon</string>
+    <string name="volte_icon_summary">Toggle VoLTE icon on StatusBar</string>
+
  </resources>
