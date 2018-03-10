@@ -65,6 +65,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
+import com.colt.settings.utils;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -94,6 +96,9 @@ public class StockRecents extends SettingsPreferenceFragment implements OnPrefer
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private Preference mStockIconPacks;
+
+    private ListPreference mRecentsType;
+    private static final String RECENTS_TYPE = "recents_layout_style";
 
     private ListPreference mImmersiveRecents;
 
@@ -125,6 +130,13 @@ public class StockRecents extends SettingsPreferenceFragment implements OnPrefer
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
         mImmersiveRecents.setOnPreferenceChangeListener(this);
 
+	// recents type
+        mRecentsType = (ListPreference) findPreference(RECENTS_TYPE);
+        int style = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_LAYOUT_STYLE, 0, UserHandle.USER_CURRENT);
+        mRecentsType.setValue(String.valueOf(style));
+        mRecentsType.setSummary(mRecentsType.getEntry());
+        mRecentsType.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -153,6 +165,14 @@ public class StockRecents extends SettingsPreferenceFragment implements OnPrefer
             mImmersiveRecents.setValue(String.valueOf(newValue));
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
             return true;
+	} else if (preference == mRecentsType) {
+            int style = Integer.valueOf((String) objValue);
+            int index = mRecentsType.findIndexOfValue((String) objValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_LAYOUT_STYLE, style, UserHandle.USER_CURRENT);
+            mRecentsType.setSummary(mRecentsType.getEntries()[index]);
+            Utils.restartSystemUi(getContext());
+        return true;
         }
         return false;
     }
