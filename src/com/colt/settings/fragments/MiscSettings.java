@@ -47,15 +47,50 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class MiscSettings extends SettingsPreferenceFragment {
 
+    private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private ListPreference mVolumeKeyCursorControl;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.misc_settings);
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        int cursorControlAction = Settings.System.getInt(resolver,
+                Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+        mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
+                cursorControlAction);
+
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getActivity().getContentResolver(), setting, Integer.valueOf(value));
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mVolumeKeyCursorControl) {
+            handleActionListChange(mVolumeKeyCursorControl, objValue,
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL);
+            return true;
+        }
+        return false;
     }
 }
