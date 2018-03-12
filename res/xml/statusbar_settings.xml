@@ -18,4 +18,10 @@
         android:title="@string/network_traffic_title"
         android:fragment="com.colt.settings.fragments.NetworkTraffic" />
 
+<com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_sleep_gesture_title"
+        android:summary="@string/double_tap_sleep_gesture_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
