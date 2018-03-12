@@ -35,4 +35,10 @@
         android:summary="@string/force_expanded_notifications_summary"
         android:defaultValue="false" />
 
+<com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="swap_volume_buttons"
+        android:title="@string/swap_volume_buttons"
+        android:summary="@string/swap_volume_buttons_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
