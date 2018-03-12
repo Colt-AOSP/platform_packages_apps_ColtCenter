@@ -50,6 +50,9 @@ public class MiscSettings extends SettingsPreferenceFragment {
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private ListPreference mVolumeKeyCursorControl;
 
+    private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
+    private ListPreference mLaunchPlayerHeadsetConnection;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +64,14 @@ public class MiscSettings extends SettingsPreferenceFragment {
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
         mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                 cursorControlAction);
+
+
+        mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
+        int mLaunchPlayerHeadsetConnectionValue = Settings.System.getIntForUser(resolver,
+                Settings.System.HEADSET_CONNECT_PLAYER, 4, UserHandle.USER_CURRENT);
+        mLaunchPlayerHeadsetConnection.setValue(Integer.toString(mLaunchPlayerHeadsetConnectionValue));
+        mLaunchPlayerHeadsetConnection.setSummary(mLaunchPlayerHeadsetConnection.getEntry());
+        mLaunchPlayerHeadsetConnection.setOnPreferenceChangeListener(this);
 
     }
 
@@ -89,6 +100,14 @@ public class MiscSettings extends SettingsPreferenceFragment {
         if (preference == mVolumeKeyCursorControl) {
             handleActionListChange(mVolumeKeyCursorControl, objValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
+            return true;
+        } else if (preference == mLaunchPlayerHeadsetConnection) {
+            int mLaunchPlayerHeadsetConnectionValue = Integer.valueOf((String) newValue);
+            int index = mLaunchPlayerHeadsetConnection.findIndexOfValue((String) newValue);
+            mLaunchPlayerHeadsetConnection.setSummary(
+                    mLaunchPlayerHeadsetConnection.getEntries()[index]);
+            Settings.System.putIntForUser(resolver, Settings.System.HEADSET_CONNECT_PLAYER,
+                    mLaunchPlayerHeadsetConnectionValue, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
