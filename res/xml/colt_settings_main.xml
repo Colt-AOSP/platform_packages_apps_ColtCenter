@@ -36,6 +36,12 @@
             android:title="@string/quicksettings_title"
             android:fragment="com.colt.settings.fragments.QuickSettings"/>
 
+	<!-- Navigation Bar -->
+        <PreferenceScreen
+            android:key="navigationbar_category"
+            android:title="@string/navbar_settings_title" 
+            android:fragment="com.colt.settings.fragments.NavbarSettings"/>
+
         <!-- Lock Screen -->
 	<PreferenceScreen
             android:fragment="com.colt.settings.fragments.LockScreenSettings"

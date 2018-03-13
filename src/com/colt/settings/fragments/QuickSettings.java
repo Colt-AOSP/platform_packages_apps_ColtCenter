@@ -9,11 +9,12 @@ import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.res.Resources;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -29,6 +30,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
+    ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -36,7 +38,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.quick_settings);
 
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
         mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);

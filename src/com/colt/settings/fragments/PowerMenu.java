@@ -41,7 +41,7 @@ import com.colt.settings.utils.Utils;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class PowermenuSettings extends SettingsPreferenceFragment
+public class PowerMenu extends SettingsPreferenceFragment
                 implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
@@ -52,7 +52,7 @@ public class PowermenuSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.powermenu_settings);
+        addPreferencesFromResource(R.xml.powermenu);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();

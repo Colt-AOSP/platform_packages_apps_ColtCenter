@@ -45,7 +45,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class MiscSettings extends SettingsPreferenceFragment {
+public class MiscSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private ListPreference mVolumeKeyCursorControl;
@@ -60,8 +61,7 @@ public class MiscSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.misc_settings);
-        resolver = getActivity().getContentResolver();
-        PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         int cursorControlAction = Settings.System.getInt(resolver,
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
@@ -108,7 +108,7 @@ public class MiscSettings extends SettingsPreferenceFragment {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mVolumeKeyCursorControl) {
-            handleActionListChange(mVolumeKeyCursorControl, objValue,
+            handleActionListChange(mVolumeKeyCursorControl, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
         } else if (preference == mLaunchPlayerHeadsetConnection) {

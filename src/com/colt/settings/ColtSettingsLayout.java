@@ -114,7 +114,7 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment {
 	    frags[0] = new StatusBarSettings();
 	    frags[1] = new QuickSettings();
 	    frags[2] = new LockScreenSettings();
-	    frags[3] = new navigation();
+	    frags[3] = new Navbar();
 	    frags[4] = new MiscSettings();
 	    frags[5] = new About();
         }
