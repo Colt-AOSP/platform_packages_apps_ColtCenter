@@ -39,6 +39,9 @@ import android.provider.Settings;
 import android.os.UserHandle;
 import android.view.View;
 import android.widget.EditText;
+import android.provider.SearchIndexableResource;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -46,7 +49,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class MiscSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private ListPreference mVolumeKeyCursorControl;
@@ -56,6 +59,9 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 
     private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
     private ListPreference mHeadsetRingtoneFocus;
+
+    private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
+    private ListPreference mSystemUIThemeStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,6 +88,15 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         mHeadsetRingtoneFocus.setValue(Integer.toString(mHeadsetRingtoneFocusValue));
         mHeadsetRingtoneFocus.setSummary(mHeadsetRingtoneFocus.getEntry());
         mHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
+
+
+        mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
+        int systemUIThemeStyle = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSTEM_UI_THEME, 0);
+        int valueIndex = mSystemUIThemeStyle.findIndexOfValue(String.valueOf(systemUIThemeStyle));
+        mSystemUIThemeStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
+        mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
 
     }
 
@@ -127,6 +142,13 @@ public class MiscSettings extends SettingsPreferenceFragment implements
             Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE,
                     mHeadsetRingtoneFocusValue);
             return true;
-        }        return false;
+       } else if (preference == mSystemUIThemeStyle) {
+            String value = (String) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
+            int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
+            mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
+        return true;
+        }
+        return false;
     }
 }

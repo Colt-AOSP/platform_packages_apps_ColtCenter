@@ -224,4 +224,9 @@
     <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation Bar</string>
 
+    <string name="systemui_theme_style_title">SystemUI style</string>
+    <string name="systemui_theme_style_auto">Wallpaper based</string>
+    <string name="systemui_theme_style_light">Light style</string>
+    <string name="systemui_theme_style_dark">Dark style</string>
+
  </resources>
