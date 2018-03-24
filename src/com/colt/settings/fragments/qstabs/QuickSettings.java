@@ -1,4 +1,4 @@
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.qstabs;
 
 import com.android.internal.logging.nano.MetricsProto;
 

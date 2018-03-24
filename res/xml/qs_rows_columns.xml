@@ -15,7 +15,9 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/colt_tabs"
+    android:title="@string/qs_tiles_title" >
 
     <com.colt.settings.preferences.CustomSeekBarPreference
         android:key="qs_rows_portrait"

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/quicksettings_title"
+    android:title="@string/qs_panel_title"
+    android:layout="@layout/colt_tabs"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
@@ -11,10 +12,5 @@
             android:entries="@array/smart_pulldown_entries"
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
-
-        <Preference
-            android:key="qs_rows_columns"
-            android:fragment="com.colt.settings.fragments.QsRowsColumns"
-            android:title="@string/qs_rows_columns_title"/>
 
 </PreferenceScreen>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.aboutcolttabs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -42,7 +42,7 @@ public class Changelog extends SettingsPreferenceFragment {
         InputStreamReader inputReader = null;
         String text = null;
 
-       
+
         try {
             StringBuilder data = new StringBuilder();
             char tmp[] = new char[2048];

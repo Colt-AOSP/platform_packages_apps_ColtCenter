@@ -11,19 +11,9 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-<com.colt.settings.preferences.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
-        android:defaultValue="false" />
-
-<com.colt.settings.preferences.SystemSettingSwitchPreference
-        android:key="force_expanded_notifications"
-        android:title="@string/force_expanded_notifications_title"
-        android:summary="@string/force_expanded_notifications_summary"
-        android:defaultValue="false" />
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/colt_tabs"
+    android:title="@string/volume_tab_title" >
 
 <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="swap_volume_buttons"

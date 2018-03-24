@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.statusbartabs;
 
 import android.content.Context;
 import android.content.ContentResolver;

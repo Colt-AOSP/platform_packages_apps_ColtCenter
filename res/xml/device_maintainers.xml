@@ -14,7 +14,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/about_colt">
+    android:layout="@layout/colt_tabs"
+    android:title="@string/maintainers_colt_title">
 
 <!-- YU -->
     <PreferenceCategory

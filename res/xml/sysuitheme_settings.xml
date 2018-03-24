@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2017-18 ColtOS
+<!-- Copyright (C) 2017 ColtOS Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -11,11 +10,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/colt_tabs"
+    android:title="@string/system_theme_title" >
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_shortAnimTime">
 
-    <item android:state_pressed="true" android:drawable="@color/background_tab_pressed" />
-    <item android:state_focused="true" android:drawable="@color/background_tab_pressed"/>
-    <item android:drawable="@android:color/transparent"/>
+<ListPreference
+            android:key="systemui_theme_style"
+            android:title="@string/systemui_theme_style_title"
+            android:persistent="false"
+            android:entries="@array/systemui_theme_style_entries"
+            android:entryValues="@array/systemui_theme_style_values" />
 
-</selector>
+</PreferenceScreen>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ColtOS Project
+ * Copyright (C) 2017-18 ColtOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.buttonstabs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -39,17 +39,14 @@ import android.provider.Settings;
 import android.os.UserHandle;
 import android.view.View;
 import android.widget.EditText;
-import android.provider.SearchIndexableResource;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class MiscSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+public class VolumeSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private ListPreference mVolumeKeyCursorControl;
@@ -60,20 +57,16 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
     private ListPreference mHeadsetRingtoneFocus;
 
-    private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
-    private ListPreference mSystemUIThemeStyle;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.misc_settings);
+        addPreferencesFromResource(R.xml.volume_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
         int cursorControlAction = Settings.System.getInt(resolver,
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
         mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                 cursorControlAction);
-
 
         mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
         int mLaunchPlayerHeadsetConnectionValue = Settings.System.getIntForUser(resolver,
@@ -90,21 +83,12 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         mHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
 
 
-        mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
-        int systemUIThemeStyle = Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSTEM_UI_THEME, 0);
-        int valueIndex = mSystemUIThemeStyle.findIndexOfValue(String.valueOf(systemUIThemeStyle));
-        mSystemUIThemeStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-        mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
-        mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
-
     private ListPreference initActionList(String key, int value) {
         ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
         list.setValue(Integer.toString(value));
@@ -142,12 +126,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
             Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE,
                     mHeadsetRingtoneFocusValue);
             return true;
-       } else if (preference == mSystemUIThemeStyle) {
-            String value = (String) newValue;
-            Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
-            int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
-            mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
-        return true;
         }
         return false;
     }

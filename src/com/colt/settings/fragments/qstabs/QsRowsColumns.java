@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.qstabs;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;

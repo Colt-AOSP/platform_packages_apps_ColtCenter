@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ColtOS Project
+ * Copyright (C) 2014-2016 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,43 +14,39 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.aboutcolttabs;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.Utils;
 
-import com.colt.settings.R;
-
-public class LockScreenSettings extends SettingsPreferenceFragment implements
+public class TeamColt extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-	public static final String TAG = "LockScreenSettings";
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-    	    super.onCreate(savedInstanceState);
-
-        Context mContext = getActivity().getApplicationContext();
-
-        addPreferencesFromResource(R.xml.lockscreen_settings);
-	}
+        addPreferencesFromResource(R.xml.team_colt);
+    }
 
     @Override
     public int getMetricsCategory() {
-	return MetricsProto.MetricsEvent.COLT;
+        return MetricsProto.MetricsEvent.COLT;
     }
 
     @Override
@@ -58,13 +54,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
         return true;
     }
 

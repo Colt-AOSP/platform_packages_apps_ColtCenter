@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-package com.colt.settings;
+package com.colt.settings.fragments.recentstabs;
 
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
-public class ColtSettingsLayout extends SettingsPreferenceFragment implements
+public class StockRecents extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    private static final String TAG = "ColtSettingsLayout";
 
     @Override
     public int getMetricsCategory() {
@@ -42,10 +36,17 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.colt_settings_main);
+        addPreferencesFromResource(R.xml.stock_recents);
+
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        return true;
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 }
+

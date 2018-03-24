@@ -11,7 +11,9 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:layout="@layout/colt_tabs"
+    android:title="@string/lockscreen_options_title" >
 
 <com.colt.settings.preferences.SystemSettingSwitchPreference
 	android:key="lockscreen_battery_info"

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ColtOS Project
+ * Copyright (C) 2014-2016 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,39 +14,48 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.navbartabs;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.Utils;
 
-import com.colt.settings.R;
-
-public class StatusBarSettings extends SettingsPreferenceFragment {
-
-    public static final String TAG = "StatusBarSettings";
+public class Navbar extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.statusbar_settings);
+        addPreferencesFromResource(R.xml.navbar_settings);
     }
- 
-@Override
+
+    @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        return true;
+    }
+
 }

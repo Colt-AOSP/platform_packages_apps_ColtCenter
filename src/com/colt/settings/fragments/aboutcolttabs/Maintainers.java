@@ -13,40 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.colt.settings;
+package com.colt.settings.fragments.aboutcolttabs;
 
 import android.os.Bundle;
 
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.ListPreference;
-import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.Preference;
-
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.Utils;
-
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.colt.settings.R;
+public class Maintainers extends SettingsPreferenceFragment {
 
-public class ColtSettings extends SettingsPreferenceFragment {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    private static final String TAG = "ColtSettings";
+        addPreferencesFromResource(R.xml.device_maintainers);
+    }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
-    }
-
-    @Override
-
-   public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-	addPreferencesFromResource(R.xml.colt_settings_main);
-
-    }
-
- }
-
+     }
+}

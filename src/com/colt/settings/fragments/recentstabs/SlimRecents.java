@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 ColtOS Project
+ * Copyright (C) 2018 ColtOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.colt.settings.fragments;
+
+package com.colt.settings.fragments.recentstabs;
 
 import android.os.Bundle;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class Maintainers extends SettingsPreferenceFragment {
+public class SlimRecents extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.COLT;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.device_maintainers);
+        addPreferencesFromResource(R.xml.slim_recents);
+
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.COLT;
-     }
+    public void onResume() {
+        super.onResume();
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
+    }
 }
+
