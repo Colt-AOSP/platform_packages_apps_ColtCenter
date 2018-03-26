@@ -33,6 +33,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.colt.settings.PagerSlidingTabStrip;
 import com.colt.settings.fragments.buttonstabs.VolumeSettings;
 import com.colt.settings.fragments.buttonstabs.PowerMenu;
+import com.colt.settings.fragments.buttonstabs.HardwareButtons;
 
 public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
 
@@ -83,8 +84,9 @@ public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
 
         public ButtonsAdapter(FragmentManager fm) {
             super(fm);
-              frags[0] = new PowerMenu();
+              frags[0] = new HardwareButtons();
               frags[1] = new VolumeSettings();
+              frags[2] = new PowerMenu();
         }
 
         @Override
@@ -106,6 +108,7 @@ public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
+                getString(R.string.hardware_button_title),
                 getString(R.string.power_menu_title),
                 getString(R.string.volume_tab_title)
 		};
