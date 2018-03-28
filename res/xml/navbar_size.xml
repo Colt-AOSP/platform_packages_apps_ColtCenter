@@ -18,26 +18,6 @@
     android:layout="@layout/colt_tabs"
     android:title="@string/navbar_size_title" >
 
-           <com.colt.settings.preferences.CustomSeekBarPreference
-                android:key="navbar_height_portrait"
-                android:title="@string/portrait_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
-
-           <com.colt.settings.preferences.CustomSeekBarPreference
-                android:key="navbar_height_landscape"
-                android:title="@string/land_hor_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
-
-           <com.colt.settings.preferences.CustomSeekBarPreference
-                android:key="navbar_width"
-                android:title="@string/land_vert_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
 
 </PreferenceScreen>
 
