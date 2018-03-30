@@ -109,8 +109,8 @@ public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                 getString(R.string.hardware_button_title),
-                getString(R.string.power_menu_title),
-                getString(R.string.volume_tab_title)
+                getString(R.string.volume_tab_title),
+                getString(R.string.power_menu_title)
 		};
         return titleString;
     }

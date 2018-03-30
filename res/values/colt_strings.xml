@@ -227,20 +227,12 @@
     <!-- Navbar fragment -->
     <string name="navbar_settings_title">Navigation Bar</string>
 
-    <!-- System Theme -->
-    <string name="systemui_theme_style_title">SystemUI style</string>
-    <string name="systemui_theme_style_auto">Wallpaper based</string>
-    <string name="systemui_theme_style_light">Light style</string>
-    <string name="systemui_theme_style_dark">Dark style</string>
-
     <!--AboutColt tabs-->  
     <string name="about_colt_title">About Colt</string>
     <string name="team_colt_title">Team Colt</string>
 
     <!--Navbar tabs-->	
     <string name="navbar_tab_title">Navbar</string>
-    <string name="navbar_style_title">Navbar Style</string>
-    <string name="navbar_size_title">Navbar Size</string>
 
     <!--Misc/Decorator tabs-->	
     <string name="led_tab_title">LED</string>

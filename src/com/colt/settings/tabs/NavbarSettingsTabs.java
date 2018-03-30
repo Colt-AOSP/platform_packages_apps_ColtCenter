@@ -32,8 +32,6 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.colt.settings.PagerSlidingTabStrip;
 import com.colt.settings.fragments.navbartabs.Navbar;
-import com.colt.settings.fragments.navbartabs.NavbarStyle;
-import com.colt.settings.fragments.navbartabs.NavbarSize;
 
 public class NavbarSettingsTabs extends SettingsPreferenceFragment {
 
@@ -85,8 +83,6 @@ public class NavbarSettingsTabs extends SettingsPreferenceFragment {
         public NavBarAdapter(FragmentManager fm) {
             super(fm);
            frags[0] = new Navbar();
-           frags[1] = new NavbarStyle();
-           frags[2] = new NavbarSize();
         }
 
         @Override
@@ -109,8 +105,6 @@ public class NavbarSettingsTabs extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                 getString(R.string.navbar_tab_title),
-                getString(R.string.navbar_style_title),
-                getString(R.string.navbar_size_title)
 		};
         return titleString;
     }
