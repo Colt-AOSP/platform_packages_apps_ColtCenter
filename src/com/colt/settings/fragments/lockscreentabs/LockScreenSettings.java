@@ -39,13 +39,25 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
 	public static final String TAG = "LockScreenSettings";
 
+	private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+
+	ListPreference mLockClockFonts;
+
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-    	    super.onCreate(savedInstanceState);
-
-        Context mContext = getActivity().getApplicationContext();
-
+	public void onCreate(Bundle icicle) {
+		super.onCreate(icicle);
         addPreferencesFromResource(R.xml.lockscreen_settings);
+
+	ContentResolver resolver = getActivity().getContentResolver();
+         final PreferenceScreen prefScreen = getPreferenceScreen();
+	Resources resources = getResources();
+
+	mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 0)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
+
 	}
 
     @Override
@@ -63,9 +75,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+         ContentResolver resolver = getActivity().getContentResolver();
+         if (preference == mLockClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+         }
+         return false;
     }
 
-}
