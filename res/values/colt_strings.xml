@@ -784,5 +784,9 @@
     <string name="lock_clock_font_condensed_bold_italic">Condensed Bold Italic</string>
     <string name="lock_clock_font_medium_normal">Medium</string>
     <string name="lock_clock_font_medium_italic">Medium Italic</string>
-
+    <string name="lock_clock_font_gobold">GoBold Light</string>
+    <string name="lock_clock_font_roadrage">Road Rage</string>
+    <string name="lock_clock_font_snowstorm">Snowstorm</string>
+    <string name="lock_clock_font_googlesans">Google Sans</string>
+    <string name="lock_clock_font_themeable">Themeable (or VCR OSD Mono)</string>
 </resources>
