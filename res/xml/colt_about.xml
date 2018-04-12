@@ -16,13 +16,6 @@
                   android:layout="@layout/colt_tabs"
                   android:title="@string/about_colt">
 
-        <!-- ColtOS Changelog -->
-        <PreferenceScreen
-            android:key="colt_changelog"
-            android:title="@string/changelog_colt_title"
-	    android:summary="@string/changelog_colt_summary"
-            android:fragment="com.colt.settings.fragments.Changelog" />
-
         <!-- ColtOS Share -->
         <PreferenceScreen
             android:key="colt_share"
