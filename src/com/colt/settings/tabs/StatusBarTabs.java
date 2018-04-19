@@ -35,6 +35,7 @@ import com.colt.settings.fragments.statusbartabs.StatusBarMisc;
 import com.colt.settings.fragments.statusbartabs.NotificationTicker;
 import com.colt.settings.fragments.statusbartabs.NetworkTraffic;
 import com.colt.settings.fragments.statusbartabs.StatusBarClockSettings;
+import com.colt.settings.fragments.statusbartabs.BatteryStyleSettings;
 
 public class StatusBarTabs extends SettingsPreferenceFragment {
 
@@ -89,6 +90,7 @@ public class StatusBarTabs extends SettingsPreferenceFragment {
             frags[1] = new NotificationTicker();
             frags[2] = new StatusBarClockSettings();
             frags[3] = new NetworkTraffic();
+            frags[4] = new BatteryStyleSettings();
         }
 
         @Override
@@ -113,7 +115,8 @@ public class StatusBarTabs extends SettingsPreferenceFragment {
                 getString(R.string.statusbar_misc_title),
                 getString(R.string.notification_ticker_title),
                 getString(R.string.statusbar_clock_title),
-                getString(R.string.network_traffic_title)
+                getString(R.string.network_traffic_title),
+                getString(R.string.battery_style_tab)
 	};
         return titleString;
     }
