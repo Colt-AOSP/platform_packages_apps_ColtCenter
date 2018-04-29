@@ -45,7 +45,8 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
         addPreferencesFromResource(R.xml.display_options);
 
         getActivity().getActionBar().setTitle(R.string.display_options_title);
-	ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
         int screenOffStyle = Settings.System.getInt(resolver,
@@ -53,6 +54,14 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(SmartPixels);
+        }
     }
 
     @Override
