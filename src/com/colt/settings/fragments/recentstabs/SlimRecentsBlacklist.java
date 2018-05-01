@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.colt.settings.fragments;
+package com.colt.settings.fragments.recentstabs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
