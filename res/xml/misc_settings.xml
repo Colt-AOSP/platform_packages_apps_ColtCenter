@@ -57,6 +57,10 @@
         android:summary="@string/volume_answer_call_summary"
         android:defaultValue="false" />
 
+<Preference
+        android:title="@string/app_ops_settings"
+        android:fragment="com.android.settings.applications.AppOpsSummary"/>
+
 <ListPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
