@@ -13,6 +13,12 @@
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
 
+	<Preference
+            android:key="app_ops"
+            android:fragment="com.android.settings.applications.AppOpsSummary"
+            android:title="@string/app_ops_category"
+            android:summary="@string/app_ops_settings_summary" />
+
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/custom_header_title">

@@ -679,5 +679,9 @@
     <!-- Face auto unlock -->
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
+
+    <!-- App Ops -->
+    <string name="app_ops_category">App Ops</string>
+    <string name="app_ops_settings_summary">Restrict/grant advanced permissions to user and system apps</string>
      
  </resources>
