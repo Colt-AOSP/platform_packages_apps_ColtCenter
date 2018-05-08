@@ -683,5 +683,8 @@
     <!-- App Ops -->
     <string name="app_ops_category">App Ops</string>
     <string name="app_ops_settings_summary">Restrict/grant advanced permissions to user and system apps</string>
+
+    <string name="device_part_title">Device Features</string>
+    <string name="device_part_summary">OnePlus Love</string>
      
  </resources>
