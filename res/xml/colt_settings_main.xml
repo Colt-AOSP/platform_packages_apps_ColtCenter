@@ -72,6 +72,7 @@
         <Preference
             android:key="device_part"
             android:title="@string/device_part_title"
+	    android:icon="@drawable/ic_colts_statusbar"
             android:summary="@string/device_part_summary">
             <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
                android:targetPackage="com.oneplus.shit"

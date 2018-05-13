@@ -686,5 +686,34 @@
 
     <string name="device_part_title">Device Features</string>
     <string name="device_part_summary">OnePlus Love</string>
-     
+
+    <!-- About ColtOS -->
+    <string name="about_coltos_screen_title">About ColtOS</string>
+    <string name="about_coltos_title">So From Where ColtOS Arrived...</string>
+    <string name="coltos_about_summary">ColtOS was started by me, Rakesh Batra, Nitin, Nikhil and Debojit in early 2017 and it was a small but an effective group also and we all were in learning stage that's why Colt as a name arrived means "a Learner". To start with ColtOS was based on LOS but now we have moved to aosp base and now in ColtOS Team we still have a team with some new members also and is just like a family to me, i would still like to mention the name of each and every member in ColtOS Team, 1. Rakesh Batra 2. Nitinkumar Chobhe 3. Roger.T 4.Debojit Deb, 5. Vinoth, 6. Santosh (SuperdroidBond), 7. Mukesh, 8. Athul, 9. Nikhil, 10. Meet Gohil, 11. Saurabh Hooda and 12. Anupam D Moran, that's the wonderfull team we have!!</string>
+    <string name="coltos_github_title">Github</string>
+    <string name="coltos_github_summary">Where the main source code for ColtOS is located</string>
+    <string name="coltos_googleplus_title">Our Google+</string>
+    <string name="coltos_googleplus_summary">Come on over and follow us there!</string>
+    <string name="coltos_telegram_title">Our Telegram group</string>
+    <string name="coltos_telegram_summary">This public group is for feedback, reviews and testing for ColtOS builds</string>
+    
+    <string name="coltos_about_devs_category">Lead devs</string>
+    <string name="coltos_about_rakesh_title">Rakesh Batra</string>
+    <string name="coltos_about_rakesh_summary">Lead developer and Founder of ColtOS, also Builds for OnePlus 3/3T</string>
+    <string name="coltos_about_nitin_title">Nitinkumar Chobhe</string>
+    <string name="coltos_about_nitin_summary">Co developer and Builds for Mako and Shamu. Often motivate Rakesh Batra to keep things simple :P</string>
+    <string name="coltos_about_vinoth_title">Vinoth Raja</string>
+    <string name="coltos_about_vinoth_summary">Co developer and really contributed well in Oreo and also Builds for Yu Yureka</string>
+
+    <string name="coltos_about_contributors_category">Lovely Contributors</string>
+    <string name="coltos_about_roger_title">Roger Truttman (aka Roger.T)</string>
+    <string name="coltos_about_roger_summary">The man to thank for amazing work for ColtOS whether it is boot animation, icons, wallpapers! He has a LOT to offer - all while completely ignoring the natural need for sleep. Hopefully he stays put;)</string>
+
+    <string name="coltos_about_mukesh_title">Mukesh</string>
+    <string name="coltos_about_mukesh_summary">Builds for OnePlus5/5T and such a nice human being.</string>
+
+    <string name="coltos_about_santosh_title">Santosh aka (SuperdroidBond)</string>
+    <string name="coltos_about_santosh_summary">Builds for OnePlus3/3T, also help in adding features in the ROM and such a nice human being.</string>	
+    
  </resources>

@@ -16,103 +16,36 @@
 
 package com.colt.settings.tabs;
 
-import android.provider.Settings;
-import android.preference.Preference;
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
+import android.provider.Settings;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.settings.Utils;
 
-import com.colt.settings.PagerSlidingTabStrip;
-import com.colt.settings.fragments.aboutcolttabs.About;
-import com.colt.settings.fragments.aboutcolttabs.TeamColt;
-import com.colt.settings.fragments.aboutcolttabs.Maintainers;
+import com.android.internal.logging.nano.MetricsProto;
 
-public class AboutSettingsTabs extends SettingsPreferenceFragment {
+public class AboutSettingsTabs extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-    ViewPager mViewPager;
-    String titleString[];
-    ViewGroup mContainer;
-    PagerSlidingTabStrip mTabs;
-
-    static Bundle mSavedState;
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mContainer = container;
-
-        View view = inflater.inflate(R.layout.preference_colt, container, false);
-        mViewPager = (ViewPager) view.findViewById(R.id.pager);
-        mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-        AboutAdapter AboutAdapter = new AboutAdapter(getFragmentManager());
-        mViewPager.setAdapter(AboutAdapter);
-        mTabs.setViewPager(mViewPager);
-
-        setHasOptionsMenu(true);
-        return view;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.about_coltos);
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle saveState) {
-        super.onSaveInstanceState(saveState);
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.COLT;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    class AboutAdapter extends FragmentPagerAdapter {
-        String titles[] = getTitles();
-        private Fragment frags[] = new Fragment[titles.length];
-
-        public AboutAdapter(FragmentManager fm) {
-            super(fm);
-            frags[0] = new About();
-            frags[1] = new TeamColt();
-            frags[2] = new Maintainers();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return frags[position];
-        }
-
-        @Override
-        public int getCount() {
-            return frags.length;
-        }
-    }
-
-    private String[] getTitles() {
-        String titleString[];
-        titleString = new String[]{
-                getString(R.string.about_colt_title),
-                getString(R.string.team_colt_title),
-                getString(R.string.maintainers_colt_title)
-		};
-        return titleString;
+        return MetricsProto.MetricsEvent.COLT;
     }
 }
-

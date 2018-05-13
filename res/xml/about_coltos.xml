@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2017 ColtOS Project
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:key="about_colt"
+        android:title="@string/about_coltos_screen_title">
+
+        <com.android.settings.applications.LayoutPreference
+            android:key="about_coltos"
+            android:layout="@layout/about_coltos" />
+
+	<PreferenceScreen
+			android:title="@string/coltos_googleplus_title"
+			android:summary="@string/coltos_googleplus_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://plus.google.com/u/0/communities/102067248475500399675" />
+	</PreferenceScreen>
+
+	<PreferenceScreen
+			android:title="@string/coltos_telegram_title"
+			android:summary="@string/coltos_telegram_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://t.me/ColtChatBox" />
+	</PreferenceScreen>
+
+	<PreferenceScreen
+			android:title="@string/coltos_github_title"
+			android:summary="@string/coltos_github_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://github.com/Colt-AOSP" />
+	</PreferenceScreen>
+
+<!-- Developers -->
+<PreferenceCategory
+		android:title="@string/coltos_about_devs_category">
+
+		<PreferenceScreen
+			android:title="@string/coltos_about_rakesh_title"
+			android:summary="@string/coltos_about_rakesh_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+        		android:data="https://forum.xda-developers.com/member.php?u=5985430" />
+		</PreferenceScreen>
+
+		<PreferenceScreen
+			android:title="@string/coltos_about_nitin_title"
+			android:summary="@string/coltos_about_nitin_summary" >
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://forum.xda-developers.com/member.php?u=5044214" />
+		</PreferenceScreen>
+
+		<PreferenceScreen
+                        android:title="@string/coltos_about_vinoth_title"
+                        android:summary="@string/coltos_about_vinoth_summary" >
+                <intent
+                        android:action="android.intent.action.VIEW"
+                        android:data="https://forum.xda-developers.com/member.php?u=8073811" />
+                </PreferenceScreen>
+
+</PreferenceCategory>
+
+<PreferenceCategory
+			android:title="@string/coltos_about_contributors_category">
+
+	<PreferenceScreen
+			android:title="@string/coltos_about_roger_title"
+			android:summary="@string/coltos_about_roger_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://plus.google.com/115954542765514252805" />
+	</PreferenceScreen>
+
+	<PreferenceScreen
+			android:title="@string/coltos_about_mukesh_title"
+			android:summary="@string/coltos_about_mukesh_summary">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://forum.xda-developers.com/member.php?u=5678679" />
+	</PreferenceScreen>
+
+	<PreferenceScreen
+                        android:title="@string/coltos_about_santosh_title"
+                        android:summary="@string/coltos_about_santosh_summary">
+                <intent
+                        android:action="android.intent.action.VIEW"
+                        android:data="https://forum.xda-developers.com/member.php?u=8829870" />
+        </PreferenceScreen>
+
+</PreferenceCategory>
+</PreferenceScreen>
