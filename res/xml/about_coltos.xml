@@ -69,7 +69,7 @@
                         android:summary="@string/coltos_about_vinoth_summary" >
                 <intent
                         android:action="android.intent.action.VIEW"
-                        android:data="https://forum.xda-developers.com/member.php?u=8073811" />
+                        android:data="https://forum.xda-developers.com/member.php?u=7983938" />
                 </PreferenceScreen>
 
 </PreferenceCategory>
@@ -99,6 +99,14 @@
                 <intent
                         android:action="android.intent.action.VIEW"
                         android:data="https://forum.xda-developers.com/member.php?u=8829870" />
+        </PreferenceScreen>
+
+	<PreferenceScreen
+                        android:title="@string/coltos_about_mady_title"
+                        android:summary="@string/coltos_about_mady_summary">
+                <intent
+                        android:action="android.intent.action.VIEW"
+                        android:data="https://forum.xda-developers.com/member.php?u=7072514" />
         </PreferenceScreen>
 
 </PreferenceCategory>

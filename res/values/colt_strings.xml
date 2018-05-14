@@ -690,7 +690,7 @@
     <!-- About ColtOS -->
     <string name="about_coltos_screen_title">About ColtOS</string>
     <string name="about_coltos_title">So From Where ColtOS Arrived...</string>
-    <string name="coltos_about_summary">ColtOS was started by me, Rakesh Batra, Nitin, Nikhil and Debojit in early 2017 and it was a small but an effective group also and we all were in learning stage that's why Colt as a name arrived means "a Learner". To start with ColtOS was based on LOS but now we have moved to aosp base and now in ColtOS Team we still have a team with some new members also and is just like a family to me, i would still like to mention the name of each and every member in ColtOS Team, 1. Rakesh Batra 2. Nitinkumar Chobhe 3. Roger.T 4.Debojit Deb, 5. Vinoth, 6. Santosh (SuperdroidBond), 7. Mukesh, 8. Athul, 9. Nikhil, 10. Meet Gohil, 11. Saurabh Hooda and 12. Anupam D Moran, that's the wonderfull team we have!!</string>
+    <string name="coltos_about_summary">ColtOS was started by me (Rakesh Batra), Nitin, Nikhil and Debojit in early 2017 and it was a small but an effective group also and we all were in learning stage that\'s why Colt as a name arrived (means a Learner). To start with ColtOS was based on LOS but now we have moved to aosp base and Recent ColtOS Team have a team with some new members also and is just like a family to me, i would still like to mention the name of each and every member in ColtOS Team, 1. Rakesh Batra 2. Nitinkumar Chobhe 3. Roger.T 4. Debojit Deb, 5. Vinoth, 6. Santosh (SuperdroidBond), 7. Mukesh, 8. Athul, 9. Nikhil, 10. Meet Gohil, 11. Saurabh Hooda and 12. Anupam D Moran, that\'s the wonderfull team we have!!</string>
     <string name="coltos_github_title">Github</string>
     <string name="coltos_github_summary">Where the main source code for ColtOS is located</string>
     <string name="coltos_googleplus_title">Our Google+</string>
@@ -716,4 +716,7 @@
     <string name="coltos_about_santosh_title">Santosh aka (SuperdroidBond)</string>
     <string name="coltos_about_santosh_summary">Builds for OnePlus3/3T, also help in adding features in the ROM and such a nice human being.</string>	
     
+    <string name="coltos_about_mady_title">Mady51</string>
+    <string name="coltos_about_mady_summary">Man who is very passionate, basically a brilliant kernel developer and a great tester also.</string>
+
  </resources>
