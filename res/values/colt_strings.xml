@@ -27,7 +27,7 @@
   <!-- Quick Settings  -->
     <string name="quicksettings_title">Quick Settings</string>
 
-  <!-- Quick Settings  -->
+  <!-- Recents UI  -->
     <string name="recentssettings_title">Recents UI</string>
 
   <!-- Quick setting categories -->
@@ -724,6 +724,10 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <string name="quick_pulldown_always">Always</string>
+
+    <!-- Display & Animation -->
+    <string name="display_options_title">Display &amp; Animations</string>
+    <string name="display_options_summary">Set animation preferences as well other aspects of display</string>
     
     <string name="coltos_about_mady_title">Mady51</string>
     <string name="coltos_about_mady_summary">Man who is very passionate, basically a brilliant kernel developer and a great tester also.</string>

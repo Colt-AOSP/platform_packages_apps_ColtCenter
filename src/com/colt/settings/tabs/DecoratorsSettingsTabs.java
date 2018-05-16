@@ -34,6 +34,7 @@ import com.colt.settings.PagerSlidingTabStrip;
 import com.colt.settings.fragments.decoratortabs.BatteryLightSettings;
 import com.colt.settings.fragments.decoratortabs.BatteryBarSettings;
 import com.colt.settings.fragments.decoratortabs.ColtThemeSettings;
+import com.colt.settings.fragments.decoratortabs.DisplayOptions;
 
 public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
 
@@ -87,6 +88,7 @@ public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
             frags[0] = new ColtThemeSettings();
             frags[1] = new BatteryLightSettings();
             frags[2] = new BatteryBarSettings();
+	    frags[3] = new DisplayOptions();
         }
 
         @Override
@@ -111,6 +113,7 @@ public class DecoratorsSettingsTabs extends SettingsPreferenceFragment {
                 getString(R.string.colt_tab_title),
                 getString(R.string.led_tab_title),
                 getString(R.string.bar_tab_title),
+		getString(R.string.display_options_title),
 		};
         return titleString;
     }
