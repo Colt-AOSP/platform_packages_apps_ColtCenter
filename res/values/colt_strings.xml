@@ -715,6 +715,15 @@
 
     <string name="coltos_about_santosh_title">Santosh aka (SuperdroidBond)</string>
     <string name="coltos_about_santosh_summary">Builds for OnePlus3/3T, also help in adding features in the ROM and such a nice human being.</string>	
+
+    <!-- Quick pull down-->
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_summary_always">Always show Quick Settings on status bar pulldown</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_right">Right</string>
+    <string name="quick_pulldown_always">Always</string>
     
     <string name="coltos_about_mady_title">Mady51</string>
     <string name="coltos_about_mady_summary">Man who is very passionate, basically a brilliant kernel developer and a great tester also.</string>

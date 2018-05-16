@@ -36,6 +36,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     ListPreference mSmartPulldown;
 
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private ListPreference mQuickPulldown;
+
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String CUSTOM_HEADER_IMAGE = "status_bar_custom_header";
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
@@ -67,6 +70,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
 
+	mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int quickPulldownValue = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1, UserHandle.USER_CURRENT);
+        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+        updatePulldownSummary(quickPulldownValue);
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
@@ -125,6 +134,23 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         }
 
+	private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+        } else if (value == 3) {
+            // quick pulldown always
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary_always));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.quick_pulldown_left
+                    : R.string.quick_pulldown_right);
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+      }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
@@ -132,6 +158,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int smartPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
             updateSmartPulldownSummary(smartPulldown);
+            return true;
+	} else if (preference == mQuickPulldown) {
+            int quickPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    quickPulldownValue, UserHandle.USER_CURRENT);
+            updatePulldownSummary(quickPulldownValue);
             return true;
         } else if (preference == mDaylightHeaderPack) {
             String value = (String) newValue;
