@@ -20,6 +20,12 @@
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
 
+	<com.colt.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_position_title"
+            android:summary="@string/qs_brightness_position_summary"
+            android:defaultValue="false"/>
+
 	<Preference
             android:key="app_ops"
             android:fragment="com.android.settings.applications.AppOpsSummary"

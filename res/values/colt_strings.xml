@@ -752,4 +752,8 @@
     <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
     <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
 
+    <!-- QS Brightness Toggle -->
+    <string name="qs_brightness_position_title">Brightness Slider at Bottom</string>
+    <string name="qs_brightness_position_summary">Enable it for getting slider at bottom</string>
+
 </resources>
