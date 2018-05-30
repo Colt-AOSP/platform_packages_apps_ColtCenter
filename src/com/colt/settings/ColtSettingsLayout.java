@@ -28,10 +28,17 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
+import com.android.settings.development.DevelopmentSettings;
+
 public class ColtSettingsLayout extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "ColtSettingsLayout";
+	
+        final String KEY_DEVICE_PART = "device_part";
+        final String KEY_DEVICE_PART_PACKAGE_NAME = "com.oneplus.shit";
 
     @Override
     public int getMetricsCategory() {
@@ -43,6 +50,11 @@ public class ColtSettingsLayout extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.colt_settings_main);
+		
+        // DeviceParts
+        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
