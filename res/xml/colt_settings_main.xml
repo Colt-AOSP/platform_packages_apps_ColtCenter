@@ -21,7 +21,7 @@
 	android:title="@string/colt_settings_title" >
 
         <!-- Status Bar -->
-	<PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:fragment="com.colt.settings.tabs.StatusBarTabs"
             android:key="colt_statusbar_settings"
             android:summary="@string/status_bar_summary"
@@ -29,7 +29,7 @@
             android:title="@string/statusbar_settings_title"/>
        
         <!-- Quick Settings panel -->
-        <PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:key="quicksettings_category"
             android:title="@string/quicksettings_title"
             android:summary="@string/qs_tab_summary"
@@ -37,7 +37,7 @@
             android:fragment="com.colt.settings.tabs.QuickSettingsTabs"/>
 
         <!-- Recents Settings panel -->
-        <PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:key="recents_category"
             android:summary="@string/tab_recents_summary"
             android:icon="@drawable/ic_colts_recents"
@@ -45,7 +45,7 @@
             android:fragment="com.colt.settings.tabs.RecentsSettingsTabs"/>
 
 	<!-- Navigation Bar -->
-        <PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:key="navigationbar_category"
             android:summary="@string/tab_navbar_summary"
             android:icon="@drawable/ic_colts_navbar"
@@ -53,7 +53,7 @@
             android:fragment="com.colt.settings.tabs.NavbarSettingsTabs"/>
 
         <!-- Lock Screen -->
-	<PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:fragment="com.colt.settings.tabs.LockscreenSettingsTabs"
             android:key="colt_lockscreen_settings"
             android:summary="@string/lock_screen_summary"
@@ -61,7 +61,7 @@
             android:title="@string/lockscreen_settings_title"/>
 
         <!-- Buttons tabs -->
-        <PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:fragment="com.colt.settings.tabs.ButtonsSettingsTabs"
             android:key="colt_button_settings"
             android:summary="@string/tab_buttons_summary"
@@ -69,18 +69,17 @@
             android:title="@string/button_settings_title"/>
 
 	<!-- Device Part One Plus Love -->
-        <Preference
+	<com.colt.settings.preferences.CardviewPreference
             android:key="device_part"
             android:title="@string/device_part_title"
 	    android:icon="@drawable/ic_colts_statusbar"
-            android:summary="@string/device_part_summary">
+            android:summary="@string/device_part_summary"
             <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
                android:targetPackage="com.oneplus.shit"
                android:targetClass ="com.oneplus.shit.settings.ShitPanelSettings" />
-        </Preference>
 
 	<!-- More Colt -->
-	<PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:fragment="com.colt.settings.tabs.DecoratorsSettingsTabs"
             android:key="colt_misc_settings"
             android:summary="@string/deco_tab_summary"
@@ -88,7 +87,7 @@
             android:title="@string/misc_settings_title"/>
 
 	<!-- About ColtOS -->
-	<PreferenceScreen
+	<com.colt.settings.preferences.CardviewPreference
             android:key="about"
             android:title="@string/about_colt"
             android:summary="@string/abt_tab_summary"

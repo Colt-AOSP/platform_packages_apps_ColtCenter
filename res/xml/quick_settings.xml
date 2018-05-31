@@ -11,7 +11,7 @@
             android:title="@string/quick_pulldown_title"
             android:entries="@array/quick_pulldown_entries"
             android:entryValues="@array/quick_pulldown_values"
-            android:persistent="false" />
+            android:persistent="true" />
 
         <ListPreference
             android:key="smart_pulldown"
@@ -24,7 +24,7 @@
             android:key="qs_brightness_position_bottom"
             android:title="@string/qs_brightness_position_title"
             android:summary="@string/qs_brightness_position_summary"
-            android:defaultValue="false"/>
+            android:defaultValue="true"/>
 
 	<Preference
             android:key="app_ops"
