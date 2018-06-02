@@ -64,8 +64,8 @@ import android.widget.ListView;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.Utils;
-import com.colt.settings.utils;
+//import com.android.settings.Utils;
+import com.colt.settings.utils.Utils;
 
 
 import java.util.ArrayList;
@@ -166,8 +166,8 @@ public class StockRecents extends SettingsPreferenceFragment implements OnPrefer
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
             return true;
 	} else if (preference == mRecentsType) {
-            int style = Integer.valueOf((String) objValue);
-            int index = mRecentsType.findIndexOfValue((String) objValue);
+            int style = Integer.valueOf((String) newValue);
+            int index = mRecentsType.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.RECENTS_LAYOUT_STYLE, style, UserHandle.USER_CURRENT);
             mRecentsType.setSummary(mRecentsType.getEntries()[index]);

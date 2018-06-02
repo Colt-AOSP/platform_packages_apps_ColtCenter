@@ -68,16 +68,6 @@
             android:icon="@drawable/ic_colts_buttons"
             android:title="@string/button_settings_title"/>
 
-	<!-- Device Part One Plus Love -->
-	<com.colt.settings.preferences.CardviewPreference
-            android:key="device_part"
-            android:title="@string/device_part_title"
-	    android:icon="@drawable/ic_colts_statusbar"
-            android:summary="@string/device_part_summary"
-            <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
-               android:targetPackage="com.oneplus.shit"
-               android:targetClass ="com.oneplus.shit.settings.ShitPanelSettings" />
-
 	<!-- More Colt -->
 	<com.colt.settings.preferences.CardviewPreference
             android:fragment="com.colt.settings.tabs.DecoratorsSettingsTabs"
@@ -85,6 +75,19 @@
             android:summary="@string/deco_tab_summary"
             android:icon="@drawable/ic_colts_deco"
             android:title="@string/misc_settings_title"/>
+
+	<!-- Device Part One Plus Love -->
+	<Preference
+            android:key="device_part"
+            android:title="@string/device_part_title"
+            android:icon="@drawable/ic_df"
+            android:summary="@string/device_part_summary"
+	    android:layout_marginRight="@dimen/card_margin_right"
+	    android:layout_marginLeft="@dimen/card_margin_left">
+            <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
+	        android:targetPackage="com.oneplus.shit"
+        	android:targetClass ="com.oneplus.shit.settings.ShitPanelSettings" />
+	</Preference>
 
 	<!-- About ColtOS -->
 	<com.colt.settings.preferences.CardviewPreference
