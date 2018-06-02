@@ -26,6 +26,14 @@
             android:summary="@string/qs_brightness_position_summary"
             android:defaultValue="true"/>
 
+	<com.colt.settings.preferences.CustomSeekBarPreference
+       	     android:key="qs_panel_alpha"
+             android:title="@string/qs_panel_alpha_title"
+             android:max="255"
+             settings:min="0"
+             settings:units=""
+             android:persistent="false" />	
+
 	<Preference
             android:key="app_ops"
             android:fragment="com.android.settings.applications.AppOpsSummary"

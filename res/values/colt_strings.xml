@@ -764,4 +764,8 @@
     <string name="recents_stock">Stock</string>
     <string name="recents_grid">Grid</string>
     <string name="recents_go">Android Go</string>
+
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">Transparency</string>
+
 </resources>
