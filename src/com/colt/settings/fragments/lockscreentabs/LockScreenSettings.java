@@ -27,6 +27,14 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.UserHandle;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
@@ -86,4 +94,4 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
          }
          return false;
     }
-
+}

@@ -79,11 +79,10 @@
 	<!-- Device Part One Plus Love -->
 	<Preference
             android:key="device_part"
-            android:title="@string/device_part_title"
-            android:icon="@drawable/ic_df"
-            android:summary="@string/device_part_summary"
-	    android:layout_marginRight="@dimen/card_margin_right"
-	    android:layout_marginLeft="@dimen/card_margin_left">
+	    android:icon="@drawable/ic_colts_statusbar"
+	    android:title="@string/device_part_title"
+	    android:summary="@string/device_part_summary"
+	    android:layout="@layout/preference_cardview" >
             <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
 	        android:targetPackage="com.oneplus.shit"
         	android:targetClass ="com.oneplus.shit.settings.ShitPanelSettings" />
