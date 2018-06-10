@@ -83,10 +83,14 @@ public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
         private Fragment frags[] = new Fragment[titles.length];
 
         public ButtonsAdapter(FragmentManager fm) {
-            super(fm);
-              frags[0] = new HardwareButtons();
+	      super(fm);
               frags[1] = new VolumeSettings();
               frags[2] = new PowerMenu();
+		try {
+		        frags[0] = new HardwareButtons();
+		} catch (IndexOutOfBoundsException e) {
+			// Do nothing
+		}
         }
 
         @Override
@@ -106,13 +110,16 @@ public class ButtonsSettingsTabs extends SettingsPreferenceFragment {
     }
 
     private String[] getTitles() {
-        String titleString[];
-        titleString = new String[]{
-                getString(R.string.hardware_button_title),
-                getString(R.string.volume_tab_title),
-                getString(R.string.power_menu_title)
-		};
-        return titleString;
+	if (getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys) > 64) {
+	        return new String[] { getString(R.string.hardware_button_title),
+			    getString(R.string.volume_tab_title),
+                            getString(R.string.power_menu_title)};
+	} else {
+		return new String[] { getString(R.string.volume_tab_title),
+                            getString(R.string.power_menu_title)};
+	}
+
     }
 }
 
