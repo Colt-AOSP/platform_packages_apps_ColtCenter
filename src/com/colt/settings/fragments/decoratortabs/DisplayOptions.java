@@ -18,6 +18,7 @@ package com.colt.settings.fragments.decoratortabs;
 
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.os.ServiceManager;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -26,17 +27,28 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.content.ContentResolver;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.util.Log;
+import android.content.Context;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.colt.settings.preferences.SecureSettingSeekBarPreference;
 
 public class DisplayOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+    private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
 
+    private SecureSettingSeekBarPreference mCornerRadius;
+    private SecureSettingSeekBarPreference mContentPadding;
     private ListPreference mScreenOffAnimation;
 
     @Override
@@ -62,6 +74,21 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
         if (!enableSmartPixels){
             prefSet.removePreference(SmartPixels);
         }
+
+        // Rounded Corner Radius
+        mCornerRadius = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        int cornerRadius = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, 0);
+        mCornerRadius.setValue(cornerRadius / 1);
+        mCornerRadius.setOnPreferenceChangeListener(this);
+
+        // Rounded Content Padding
+        mContentPadding = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        int contentPadding = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, 0);
+        mContentPadding.setValue(contentPadding / 1);
+        mContentPadding.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -74,7 +101,16 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
             int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
-       }
+       } else if (preference == mCornerRadius) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1);
+        } else if (preference == mContentPadding) {
+            int value = (Integer) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
+            return true;
+        }
         return false;
     }
 
