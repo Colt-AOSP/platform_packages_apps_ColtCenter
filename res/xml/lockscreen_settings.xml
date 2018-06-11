@@ -15,31 +15,65 @@
     android:layout="@layout/colt_tabs"
     android:title="@string/lockscreen_options_title" >
 
-<com.colt.settings.preferences.SystemSettingSwitchPreference
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_clock"
+        android:title="@string/hide_lockscreen_clock_title"
+        android:summary="@string/hide_lockscreen_clock_summary"
+        android:defaultValue="true" />
+ 
+    <ListPreference
+        android:key="lockscreen_clock_selection"
+        android:title="@string/lockscreen_clock_selection_title"
+        android:entries="@array/lockscreen_clock_selection_entries"
+        android:entryValues="@array/lockscreen_clock_selection_values"
+        android:defaultValue="0"
+        android:dependency="hide_lockscreen_clock" />
+
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_date"
+        android:title="@string/hide_lockscreen_date_title"
+        android:summary="@string/hide_lockscreen_date_summary"
+        android:defaultValue="true" />
+ 
+    <ListPreference
+        android:key="lockscreen_date_selection"
+        android:title="@string/lockscreen_date_selection_title"
+        android:entries="@array/lockscreen_date_selection_entries"
+        android:entryValues="@array/lockscreen_date_selection_values"
+        android:defaultValue="0"
+        android:dependency="hide_lockscreen_date" />
+
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_alarm"
+        android:title="@string/hide_lockscreen_alarm_title"
+        android:summary="@string/hide_lockscreen_alarm_summary"
+        android:defaultValue="true" />
+
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
 	android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary" 
         android:defaultValue="false" />
 
-<com.colt.settings.preferences.SystemSettingSwitchPreference
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
         android:title="@string/double_tap_to_sleep_lockscreen_title"
         android:summary="@string/double_tap_to_sleep_lockscreen_summary"
         android:defaultValue="true" />
 
-<com.colt.settings.preferences.SystemSettingSwitchPreference
+    <com.colt.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_media_metadata"
         android:title="@string/media_art_title"
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
-<com.colt.settings.preferences.SecureSettingSwitchPreference
+    <com.colt.settings.preferences.SecureSettingSwitchPreference
         android:key="face_auto_unlock"
         android:title="@string/face_auto_unlock_title"
         android:summary="@string/face_auto_unlock_summary"
         android:defaultValue="false" />
 
-<ListPreference
+    <ListPreference
         android:key="lock_clock_fonts"
         android:title="@string/lock_clock_font_title"
         android:dialogTitle="@string/lock_clock_font_dialog_title"
