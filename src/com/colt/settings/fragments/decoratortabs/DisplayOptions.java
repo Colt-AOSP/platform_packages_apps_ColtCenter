@@ -105,13 +105,12 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
             int value = (Integer) newValue;
             Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1);
-        } else if (preference == mContentPadding) {
+       } else if (preference == mContentPadding) {
             int value = (Integer) newValue;
             Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
-            return true;
-        }
-        return false;
+       }
+	return true;
     }
 
     @Override
