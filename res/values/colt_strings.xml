@@ -827,5 +827,12 @@
     <string name="edge_gestures_back_screen_percent_summary">Trigger below % of screen</string>
     <string name="edge_gestures_summary">Navigate using edge gestures</string>
 
+    <!-- Wallpaper tint -->
+    <string name="tint_menus_all">Tint Removal Menu</string>
+    <string name="wallpaper_tint_power_menu">Power menu background tint</string>
+    <string name="wallpaper_tint_recents">Recents background tint</string>
+    <string name="wallpaper_tint_keyguard">Lockscreen background tint</string>
+    <string name="wallpaper_tint_notification_shade">Notification shade tint</string>
+    <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string>
 
 </resources>
