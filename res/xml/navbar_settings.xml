@@ -18,6 +18,13 @@
     android:layout="@layout/colt_tabs"
     android:title="@string/navbar_tab_title" >
 
+    <!-- Edge gestures -->
+    <PreferenceScreen
+        android:id="@+id/edge_gestures"
+        android:key="edge_gestures"
+        android:title="@string/edge_gestures_title"
+        android:icon="@drawable/ic_edge_gestures"
+        android:fragment="com.colt.settings.fragments.navbartabs.EdgeGesturesSettings" />
 
     <SwitchPreference
         android:key="navbar_visibility"
