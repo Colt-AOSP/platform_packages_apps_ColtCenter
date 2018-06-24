@@ -43,6 +43,7 @@ import com.colt.settings.preferences.SecureSettingSeekBarPreference;
 
 public class DisplayOptions extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
@@ -59,6 +60,11 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
         getActivity().getActionBar().setTitle(R.string.display_options_title);
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefSet.removePreference(incallVibCategory);
+        }
 
         mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
         int screenOffStyle = Settings.System.getInt(resolver,
