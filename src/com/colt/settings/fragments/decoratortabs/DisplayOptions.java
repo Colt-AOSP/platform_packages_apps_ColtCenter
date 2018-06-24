@@ -33,10 +33,10 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.util.Log;
 import android.content.Context;
-
+import com.colt.settings.utils.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+//import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.colt.settings.preferences.SecureSettingSeekBarPreference;
@@ -47,10 +47,12 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private SecureSettingSeekBarPreference mCornerRadius;
     private SecureSettingSeekBarPreference mContentPadding;
     private ListPreference mScreenOffAnimation;
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,6 +97,17 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
         mContentPadding.setValue(contentPadding / 1);
         mContentPadding.setOnPreferenceChangeListener(this);
 
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        Preference FlashOnCall = findPreference("flashlight_on_call");
+        int flashlightValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.FLASHLIGHT_ON_CALL, 0);
+        mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+        mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+        mFlashlightOnCall.setOnPreferenceChangeListener(this);
+
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefSet.removePreference(FlashOnCall);
+        }
     }
 
     @Override
@@ -115,6 +128,13 @@ public class DisplayOptions extends SettingsPreferenceFragment implements Prefer
             int value = (Integer) newValue;
             Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
+       } else if (preference == mFlashlightOnCall) {
+            int flashlightValue = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putInt(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
+            mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+            mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+           return true;
        }
 	return true;
     }
